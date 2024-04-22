@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 
 struct Node {
@@ -65,13 +65,18 @@ void deleteList(Node* head) {
 
 int main() {
     Node* head = nullptr; // Инициализация головы списка
+    setlocale(0, "ru");
 
     // Добавление элементов в список
-    head = append(head, 1);
-    head = append(head, 2);
-    head = append(head, 3);
-    head = append(head, 4);
-    head = append(head, 5);
+    int input;
+    cout << "Введите числа для добавления в список (для завершения введите 0):" << endl;
+    while (true) {
+        cin >> input;
+        if (input == 0) {
+            break;
+        }
+        head = append(head, input);
+    }
 
     cout << "Исходный список:" << endl;
     printList(head);
